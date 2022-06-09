@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1147479668}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PartSelection, Assembly-CSharp
         m_MethodName: ShowPreviousPart
         m_Mode: 1
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1147479668}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PartSelection, Assembly-CSharp
         m_MethodName: ShowNextPart
         m_Mode: 1
@@ -947,7 +947,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1147479669}
+  - component: {fileID: 1147479671}
+  - component: {fileID: 1147479670}
   - component: {fileID: 1147479668}
+  - component: {fileID: 1147479672}
   m_Layer: 0
   m_Name: CustomizerSpot
   m_TagString: Untagged
@@ -955,23 +958,47 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1147479668
-MonoBehaviour:
+--- !u!23 &1147479668
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147479667}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6493d42ed280b4f4ea7d89ec0bfe066e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partModels:
-  - {fileID: 11400000, guid: 0d52af7443d52c84d82808cf5ffd0466, type: 2}
-  - {fileID: 11400000, guid: a7aeefb46715b5f418d84fbb63b88ab8, type: 2}
-  CustomizerSpot: {fileID: 1147479669}
-  currentPart: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &1147479669
 Transform:
   m_ObjectHideFlags: 0
@@ -986,6 +1013,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1147479670
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147479667}
+  m_Mesh: {fileID: -4189514412694937182, guid: e48d18018a0ba46c283d9fd9c227e578, type: 3}
+--- !u!114 &1147479671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147479667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c768aca3fe7e1643a1f0caec92c32c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handModel:
+  - {fileID: 11400000, guid: 7020f93c2a2b6f1418f9e5967a9aee93, type: 2}
+  - {fileID: 11400000, guid: 55f4dd50e1eb1f949bd19d0d346ea0e6, type: 2}
+  armModel:
+  - {fileID: 11400000, guid: 99b13a395d26341418e6e0da495a93fe, type: 2}
+  headModel: []
+  legModel: []
+  footModel: []
+  CustomizerSpot: {fileID: 1147479669}
+  hands: []
+  arms: []
+  heads: []
+  legs: []
+  foots: []
+  currentHand: 0
+  currentArm: 0
+  currentHead: 0
+  currentLeg: 0
+  currentFoot: 0
+--- !u!114 &1147479672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147479667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2711745b227ffdc4fbea8a408357e91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handModel:
+  - {fileID: 11400000, guid: 55f4dd50e1eb1f949bd19d0d346ea0e6, type: 2}
+  - {fileID: 11400000, guid: fa46b807018041748afb982cd70f5e3c, type: 2}
+  armModel: []
+  headModel: []
+  legModel: []
+  footModel: []
+  CustomizerSpot: {fileID: 0}
+  currentHand: 0
+  currentArm: 0
+  currentHead: 0
+  currentLeg: 0
+  currentFoot: 0
 --- !u!1 &1397761874
 GameObject:
   m_ObjectHideFlags: 0

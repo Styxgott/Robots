@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HandModel", menuName = "Hand")]
 public class HandModel : ScriptableObject
 {
-  
     public string HandName;
     public GameObject part;
 }
