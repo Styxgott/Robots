@@ -5,6 +5,9 @@ using UnityEngine;
 public class ArmModel : ScriptableObject
 {
   
-    public string ArmName;
-    public GameObject part;
+[SerializeField] private string partName = default;
+    [SerializeField] private GameObject armPrefab = default;
+    
+    public string PartName => partName;
+    public GameObject ArmPrefab => armPrefab;
 }

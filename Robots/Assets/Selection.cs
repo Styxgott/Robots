@@ -5,99 +5,52 @@ using System.Collections.Generic;
 public class Selection : MonoBehaviour
 {
     public HandModel[] handModel;
+
     public ArmModel[] armModel;
-    public HeadModel[] headModel;
-    public LegModel[] legModel;
-    public FootModel[] footModel;
+
+   
+   [SerializeField] private Transform CustomizerSpot = default;
+   [SerializeField] private Transform ArmSpot = default;
+
+    private List<GameObject> hands = new List<GameObject>();
+       private List<GameObject> arms;
 
 
-    public Transform CustomizerSpot;
-
-    private List<GameObject> hands;
-    private List<GameObject> arms;
-    private List<GameObject> heads;
-    private List<GameObject> legs;
-    private List<GameObject> foots;
-
-
-    public int currentHand = 0;
+    private int currentHand = 0;
     public int currentArm = 0;
-    public int currentHead = 0;
-    public int currentLeg = 0;
-    public int currentFoot = 0;
+   
         
 
 
  public void Start()
     {     
-       
-        
-        hands = new List<GameObject>();
-        
-       
-        foreach (var hand in handModel)
+       if( CustomizerSpot.childCount == 0)
+       {
+           foreach (var hand in handModel)
         {   
-            GameObject h = Instantiate(hand.part,CustomizerSpot.position , Quaternion.identity)  ;
+            GameObject h = Instantiate(hand.HandPrefab,CustomizerSpot);
             h.SetActive(false);
-            h.transform.SetParent(CustomizerSpot);
             hands.Add(h);
 
         }
-       /* foreach(var arm in armModel)
+
+         /*   foreach (var arm in armModel)
         {
-             GameObject a = Instantiate(arm.part, new Vector3(-10,5,-3)  , Quaternion.identity)  ;
+            GameObject a = Instantiate(arm.ArmPrefab,CustomizerSpot);
             a.SetActive(false);
-            a.transform.SetParent(CustomizerSpot);
             arms.Add(a);
-        }
+        }*/
 
-    foreach(var head in headModel)
-        {
-             GameObject h = Instantiate(head.part,CustomizerSpot.position , Quaternion.identity)  ;
-            h.SetActive(false);
-            h.transform.SetParent(CustomizerSpot);
-            heads.Add(h);
-        }
-    
-    foreach(var leg in legModel)
-        {
-             GameObject l = Instantiate(leg.part,CustomizerSpot.position , Quaternion.identity)  ;
-            l.SetActive(false);
-            l.transform.SetParent(CustomizerSpot);
-            legs.Add(l);
-        }
-
-         foreach(var foot in footModel)
-        {
-             GameObject f = Instantiate(foot.part,CustomizerSpot.position , Quaternion.identity)  ;
-            f.SetActive(false);
-            f.transform.SetParent(CustomizerSpot);
-            foots.Add(f);
-        }
-        */
-        ShowPartFromList();
-      
-}
-    
-
- void ShowPartFromList(){
-            hands[currentHand].SetActive(true);
+            hands[currentHand].SetActive(true); 
             arms[currentArm].SetActive(true);
-
-        }
-     
-    
-   void Update(){
-       if(Input.GetKeyDown(KeyCode.A)){
-           ShowPreviousHand();
        }
-        if(Input.GetKeyDown(KeyCode.D)){
-           ShowNextHand();
-       }
-   }
+      }  
+        
+        
+      
 
 
- public void  ShowPreviousHand(){
+     void  ShowPreviousHand(){
     hands[currentHand].SetActive(false);
     currentHand--;
      if(currentHand < 0)
@@ -107,11 +60,12 @@ public class Selection : MonoBehaviour
         hands[currentHand].SetActive(true);
     }
 
-public void  ShowNextHand(){
+    void  ShowNextHand(){
      hands[currentHand].SetActive(false);
      currentHand = (currentHand +1)% hands.Count;
      hands[currentHand].SetActive(true);
 }
+
 
 }
 

@@ -4,6 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HandModel", menuName = "Hand")]
 public class HandModel : ScriptableObject
 {
-    public string HandName;
-    public GameObject part;
+    [SerializeField] private string partName = default;
+    [SerializeField] private GameObject handPrefab = default;
+    
+    public string PartName => partName;
+    public GameObject HandPrefab => handPrefab;
 }
