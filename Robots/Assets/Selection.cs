@@ -16,7 +16,7 @@ public class Selection : MonoBehaviour
        private List<GameObject> arms;
 
 
-    private int currentHand = 0;
+        public int currentHand = 0;
     public int currentArm = 0;
    
         
@@ -42,7 +42,7 @@ public class Selection : MonoBehaviour
         }*/
 
             hands[currentHand].SetActive(true); 
-            arms[currentArm].SetActive(true);
+           // arms[currentArm].SetActive(true);
        }
       }  
         
