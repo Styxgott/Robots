@@ -12,7 +12,7 @@ public class Robot : MonoBehaviour
    
     public float speed = 1.0f;
     public InputActionProperty moveButton;
-    public NavMeshAgent agent;
+    public NavMeshAgent agent ;
 
     public InputActionProperty homeButton;
     // Start is called before the first frame update
