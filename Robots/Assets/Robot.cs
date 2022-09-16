@@ -19,7 +19,11 @@ public class Robot : MonoBehaviour
     void Start()
     {
        // transform.Rotate(0.0f, 270.0f, 0.0f, Space.Self);
-        
+       moveButton.EnableDirectAction();
+       moveButton.action.performed += _ => MovetoObjectA();
+       homeButton.EnableDirectAction();
+       homeButton.action.performed += _ => MovetoObjectB();
+      
 
 
 
@@ -28,10 +32,7 @@ public class Robot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveButton.EnableDirectAction();
-        moveButton.action.performed += _ => MovetoObjectA();
-        homeButton.EnableDirectAction();
-        homeButton.action.performed += _ => MovetoObjectB();
+       
     }
 
     public void MovetoObjectA()
@@ -47,6 +48,7 @@ public class Robot : MonoBehaviour
         Debug.Log("moving home");
         agent.stoppingDistance = 4.0f;
         agent.SetDestination(GameObject.Find("HomeBox").transform.position);
+        
        
     }
 
