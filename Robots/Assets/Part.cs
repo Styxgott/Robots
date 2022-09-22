@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Part : MonoBehaviour
 {
-  /*  // Start is called before the first frame update
+   // Start is called before the first frame update
     private List <GameObject> HandList;
     private HandModel [] handModel;
 
@@ -31,7 +31,7 @@ public class Part : MonoBehaviour
         }
         HandList[currentHand].SetActive(true);
 
-    }*/
+    }
     // Update is called once per frame
     void Update()
     {
