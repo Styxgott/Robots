@@ -29,9 +29,9 @@ public class HandPresence : MonoBehaviour
         InputDeviceCharacteristics leftControllerCharacteristics =
             InputDeviceCharacteristics.Left |
             InputDeviceCharacteristics.Controller; // Get input device from right controller 
-        //InputDevices.GetDeviceAtXRNode(inputSource);
-        InputDevices.GetDevices(devices); //List of all input devices
-        InputDevices.GetDevicesWithCharacteristics(leftControllerCharacteristics, devices); // List of devices with characteristics
+        InputDevices.GetDeviceAtXRNode(inputSource);
+        //InputDevices.GetDevices(devices); //List of all input devices
+        //InputDevices.GetDevicesWithCharacteristics(leftControllerCharacteristics, devices); // List of devices with characteristics
         
         foreach (var item in devices)
         {

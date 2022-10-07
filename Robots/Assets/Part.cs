@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Part : MonoBehaviour
+/*public class Part : MonoBehaviour
 {
    // Start is called before the first frame update
     private List <GameObject> HandList;
@@ -37,4 +37,4 @@ public class Part : MonoBehaviour
     {
         
     }
-}
+}*/
